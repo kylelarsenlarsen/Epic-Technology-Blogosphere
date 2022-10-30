@@ -1,33 +1,25 @@
 const { Comment } = require('../models');
-
+// removed auto-incremented id
 const comment = [
     {
-        id: 1,
-        post_id:,
-        user_id:,
-        date_created:
-        body: ""
+        post_id: 1,
+        user_id: 3,
+        body: "Great explanation!"
     },
     {
-        id: 2,
-        post_id:,
-        user_id:,
-        date_created:
-        body: ""
+        post_id: 1,
+        user_id: 1,
+        body: "Agreed, couldn't have said it better myself."
     },
     {
-        id: 3,
-        post_id:,
-        user_id:,
-        date_created:
-        body: ""
+        post_id: 2,
+        user_id: 2,
+        body: "Love this!"
     },
     {
-        id: 4,
-        post_id:,
-        user_id:,
-        date_created:
-        body: ""
+        post_id: 3,
+        user_id: 3,
+        body: "I could browse this site all day."
     },
 ]
 

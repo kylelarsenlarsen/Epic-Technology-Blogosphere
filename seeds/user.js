@@ -2,28 +2,24 @@ const { User } = require('../models');
 
 const user = [
     {
-        id:,
-        name:,
-        email:,
-        password:
+        name: "Jerry Plinkton",
+        email: "duderanonymous@plinkdin.com",
+        password: "Cucumber9210!"
     },
     {
-        id:,
-        name:,
-        email:,
-        password:
+        name: "xXx_HoTnEsS_xXx",
+        email: "funkyarmadillo@aol.com",
+        password: "password123"
     },
     {
-        id:,
-        name:,
-        email:,
-        password:
+        name: "Homeless_Stud",
+        email: "wheredmyhousego@yahoomail.com",
+        password: "breadlineallday!1029384756"
     },
     {
-        id:,
-        name:,
-        email:,
-        password:
+        name: "Pablo Escobar",
+        email: "drugrunnin@hotmail.com",
+        password: "bubblegumandhorses?0987"
     },
 ]
 
