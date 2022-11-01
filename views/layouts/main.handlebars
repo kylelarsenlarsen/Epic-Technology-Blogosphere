@@ -15,11 +15,12 @@
     <link rel="stylesheet" type="text/css" href="/css/style.css">
 </head>
 
+<!-- NAVBAR for handlebars -->
+
 <body>
-    <!-- NAVBAR -->
     <nav class="navbar navbar-expand-lg bg-dark">
         <div class="container-fluid">
-            <a class="navbar-brand" href="#">Navbar</a>
+            <a class="navbar-brand text-white" href="#">Technology Blogosphere</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -28,23 +29,30 @@
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
+                        <a class="nav-link active text-white" aria-current="page" href="#">Home</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Dashboard</a>
+                        <a class="nav-link text-white" href="#">Dashboard</a>
+                    </li>
+                    <!--logged in handlebars script-->
+                    <li class="nav-item">
+                        <button class="bg-dark" role="button" id="logout" type="button" data-toggle="modal"
+                            data-target="#exampleModal">Logout</button>
+                    </li>
+                    <!--handlebars path if logged out-->
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#">Login</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Login</a>
+                        <a class="nav-link text-white" href="#">Sign Up</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Sign Up</a>
-                    </li>
+                    <!--closing tags-->
                 </ul>
             </div>
         </div>
     </nav>
 
-    <!-- HANDLEBAR GOES HERE -->
+    <!-- HANDLEBARS GO HERE -->
 
     <!-- SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -57,7 +65,7 @@
         integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
         crossorigin="anonymous"></script>
 
-    <!-- IF LOGGED SCRIPT -->
+    <!-- IF LOGGED SCRIPT for handlebars -->
     <script src=""></script>
 
 </body>
