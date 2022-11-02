@@ -1,0 +1,80 @@
+    <!--CODE SNIPPET FOR KYLES DASHBOARD-->
+    <div class="container">
+        <section class="mb-4">
+            <div class="card-header bg-secondary h2 text-white ml-auto">Your Posts</div>
+
+            <div>
+                <ul class="p-3">
+                    <!--INSERT HANDLEBARS LOGIC-->
+                    <div class="border border-4 m-1">
+                        <li class="d-flex">
+                            <div class="p-2">
+                                <p>
+                                    <!--INSERT HANDLEBARS LOGIC-->
+                                </p>
+                            </div>
+
+                            <button class="d-inline ml-auto m-1 ms-auto" data-id="{{id}}">
+                                <a class="a" href="/post/{{id}}">View Post</a></button>
+                            <button class="d-inline ml-auto m-1 deleteBtn" data-id="{{id}}">Delete</button>
+                        </li>
+                    </div>
+                    <!--INSERT HANDLEBARS LOGIC-->
+                    <p class="mt-2">There are no existing posts.</p>
+                    <!---->
+                </ul>
+            </div>
+        </section>
+
+        <section class="card mb-4" id="postForm">
+            <div class="card-header bg-secondary text-white">New Post</div>
+            <div class="card-body">
+                <form class="newPostForm">
+                    <div>
+                        <label class="form-label">Title:</label>
+                        <input class="form-input w-100 mb-2" id="postTitle" type="text" name="title" />
+                    </div>
+                    <div>
+                        <label class="form-label">Content:</label>
+                        <input class="form-input w-100 mb-2" id="postContent" type="text" name="post" />
+                    </div>
+                    <button type="submit" class="bg-primary text-white" id="submitPost">Submit</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <div class="text-center mt-4">
+        <!--HANDLEBARS LOGIC GOES HERE-->
+        <button type="button" class="mx-auto" style="width: 190px;" id="createPost">Create Post</button>
+        <button class="d-inline ml-auto m-1 ms-auto updatePost" type="button" data-bs-target="#staticBackdrop"
+            data-bs-toggle="modal" data-id="{{id}}">Update Post</button>
+        <!---->
+        <button type="button" class="mx-auto" style="width: 190px;" id="createPost">Create Post</button>
+        <!---->
+    </div>
+
+    <div class="modal-dialog modal-dialog-centered hide modalBtn">
+        <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+            aria-labelledby="staticBackdropLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header fw-bold">Update Post</div>
+                    <p class="mx-3 fw-bold">Post Item:</p>
+                    <input class="modal-body px-3 mx-3" type="text" id="PostID" name="postId">
+                    <p class="m-3 fw-bold">Title:</p>
+                    <input class="modal-body px-3 mx-3" type="text" id="updateTitle" name="updateTitle">
+                    <p class="m-3 fw-bold">Content:</p>
+                    <input class="modal-body px-3 mx-3" type="text" id="updateContent" name="updateContent">
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                        <button type="button" class="btn btn-primary" id="modalUpdate">Update Post</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src=""></script>
+    <script src=""></script>
+    <script src=""></script>
