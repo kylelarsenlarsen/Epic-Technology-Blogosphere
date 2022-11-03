@@ -1,0 +1,30 @@
+<main class="container h-95 mt-4">
+    <div class="row h-95 justify-content-center align-items-center">
+        <div class="container w-50">
+            <h1>Login</h1>
+            <p>Don't have an account? <a class="text-red" href="/signup">Create an account!</a></p>
+            <form class="mt-5">
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" class="form-control" id="emailVal">
+                </div>
+                <div class="form-group">
+                    <label>Password</label>
+                    <input type="password" class="form-control" id="passwordVal">
+                </div>
+                <button type="submit" class="bg-primary text-white my-2" id="loginBtn">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <button class="btn custom-btn text-white mx-3 my-3 my-sm-0" role="button" id="myCheck" type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal"></button>
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content bg-black content_center border-light p-3">
+                Please try again, email or password is incorrent.
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src=""></script>
