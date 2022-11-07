@@ -1,5 +1,5 @@
 function showComment() {
-    const createComment = document.querySelector("#createComment");
+    const createComment = document.querySelector("#comment");
     const commentForm = document.querySelector("#commentForm");
     commentForm.classList.remove("hide");
     createComment.classList.add("hide");
