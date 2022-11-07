@@ -5,12 +5,13 @@
 
             <div>
                 <ul class="p-3">
-                    <!--INSERT HANDLEBARS LOGIC-->
+                    {{#if posts.length}}
+                    {{#each posts as |post|}}
                     <div class="border border-4 m-1">
                         <li class="d-flex">
                             <div class="p-2">
                                 <p>
-                                    <!--INSERT HANDLEBARS LOGIC-->
+                                    {{format_date date_created}}: {{title}} || Post {{id}}
                                 </p>
                             </div>
 
@@ -19,9 +20,10 @@
                             <button class="d-inline ml-auto m-1 deleteBtn" data-id="{{id}}">Delete</button>
                         </li>
                     </div>
-                    <!--INSERT HANDLEBARS LOGIC-->
+                    {{/each}}
+                    {{else}}
                     <p class="mt-2">There are no existing posts.</p>
-                    <!---->
+                    {{/if}}
                 </ul>
             </div>
         </section>
@@ -45,13 +47,13 @@
     </div>
 
     <div class="text-center mt-4">
-        <!--HANDLEBARS LOGIC GOES HERE-->
+        {{#if posts.length}}
         <button type="button" class="mx-auto" style="width: 190px;" id="createPost">Create Post</button>
         <button class="d-inline ml-auto m-1 ms-auto updatePost" type="button" data-bs-target="#staticBackdrop"
             data-bs-toggle="modal" data-id="{{id}}">Update Post</button>
-        <!---->
+        {{else}}
         <button type="button" class="mx-auto" style="width: 190px;" id="createPost">Create Post</button>
-        <!---->
+        {{/if}}
     </div>
 
     <div class="modal-dialog modal-dialog-centered hide modalBtn">
@@ -75,6 +77,6 @@
         </div>
     </div>
 
-    <script src=""></script>
-    <script src=""></script>
-    <script src=""></script>
+    <script src="./js/create.js"></script>
+    <script src="./js/delete.js"></script>
+    <script src="./js/update.js"></script>

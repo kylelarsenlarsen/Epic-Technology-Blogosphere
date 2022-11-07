@@ -34,25 +34,26 @@
                     <li class="nav-item">
                         <a class="nav-link text-white" href="#">Dashboard</a>
                     </li>
-                    <!--logged in handlebars script-->
+                    {{#if loggedIn}}
                     <li class="nav-item">
                         <button class="bg-secondary" role="button" id="logout" type="button" data-toggle="modal"
                             data-target="#exampleModal">Logout</button>
                     </li>
-                    <!--handlebars path if logged out-->
+                    {{else}}
                     <li class="nav-item">
                         <a class="nav-link text-white" href="#">Login</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link text-white" href="#">Sign Up</a>
                     </li>
-                    <!--closing tags-->
+                    {{/if}}
                 </ul>
             </div>
         </div>
     </nav>
 
     <!-- HANDLEBARS GO HERE -->
+    {{{body}}}
 
     <!-- SCRIPTS -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
@@ -66,6 +67,8 @@
         crossorigin="anonymous"></script>
 
     <!-- IF LOGGED SCRIPT for handlebars -->
-    <script src=""></script>
+    {{#if loggedIn}}
+    <script src="/js/logout.js"></script>
+    {{/if}}
 
 </body>
