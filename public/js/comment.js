@@ -1,4 +1,4 @@
-function showCommentCreation() {
+function showComment() {
     const createComment = document.querySelector("#createComment");
     const commentForm = document.querySelector("#commentForm");
     commentForm.classList.remove("hide");
@@ -33,4 +33,4 @@ async function newComment(effect) {
 };
 
 document.querySelector(".newCommentForm").addEventListener("submit", newComment);
-createComment.addEventListener("click", showCommentCreation);
+createComment.addEventListener("click", showComment);

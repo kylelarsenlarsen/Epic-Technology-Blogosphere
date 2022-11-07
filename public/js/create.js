@@ -1,4 +1,4 @@
-function showPostCreation() {
+function showPost() {
     const createPost = document.querySelector("#createPost");
     const postForm = document.querySelector("#postForm");
     postForm.classList.remove("hide");
@@ -31,4 +31,4 @@ async function newPost(effect) {
 };
 
 document.querySelector(".newPostForm").addEventListener("submit", newPost);
-createPost.addEventListener("click", showPostCreation);
+createPost.addEventListener("click", showPost);
