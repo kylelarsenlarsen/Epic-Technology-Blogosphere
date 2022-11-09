@@ -1,21 +1,23 @@
+const createComment = document.querySelector("#comment");
+
 function showComment() {
-    const createComment = document.querySelector("#comment");
+    
     const commentForm = document.querySelector("#commentForm");
     commentForm.classList.remove("hide");
     createComment.classList.add("hide");
 };
-
-async function newComment(effect) {
-    effect.preventDefault();
+console.log(createComment);
+async function newComment(event) {
+    event.preventDefault();
 
     const post_id = window.location.toString().split("/")[
         window.location.toString().split("/").length - 1
     ];
-    const comment = document.querySelector("#commentComment").ariaValueMax;
+    const comment = document.querySelector("#commentComment").value;
     const response = await fetch("/api/comment", {
         method: 'POST',
         body: JSON.stringify({
-            comment: comment,
+            body: comment,
             post_id: post_id,
         }),
         headers: {

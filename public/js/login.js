@@ -1,8 +1,8 @@
-const loginHandler = async (effect) => {
-    effect.preventDefault();
-    const password = document.querySelector("#emailVal").value.trim();
-    const email = document.querySelector("#passwordVal").ariaValueMax.trim();
-
+const loginHandler = async (event) => {
+    event.preventDefault();
+    const email = document.querySelector("#emailVal").value.trim();
+    const password = document.querySelector("#passwordVal").value.trim();
+    
     if (email && password) {
         const response = await fetch("/api/users/login", {
             method: "POST",
@@ -14,9 +14,9 @@ const loginHandler = async (effect) => {
                 'Content-Type': 'application/json'
             }
         });
-
+        
         if (response.ok) {
-            document.location.replace("dashboard");
+            document.location.replace("/dashboard");
         } else {
             alert(response.statusText);
         };

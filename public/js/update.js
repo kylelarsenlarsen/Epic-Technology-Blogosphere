@@ -9,8 +9,8 @@ function hideModal() {
     document.location.replace("/dashboard");
 };
 
-async function updatePost(effect) {
-    effect.preventDefault();
+async function updatePost(event) {
+    event.preventDefault();
     const id = document.querySelector("#PostID").value;
     const title = document.querySelector("#updateTitle").value;
     const content = document.querySelector("#updateContent").value;
@@ -18,7 +18,7 @@ async function updatePost(effect) {
         method: "PUT",
         body: JSON.stringify({
             title: title,
-            content: content,
+            body: content,
             id: id,
         }),
         headers: {

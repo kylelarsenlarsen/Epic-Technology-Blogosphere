@@ -5,16 +5,16 @@ function showPost() {
     createPost.classList.add("hide");
 };
 
-async function newPost(effect) {
-    effect.preventDefault();
+async function newPost(event) {
+    event.preventDefault();
 
-    const content = document.querySelector("#postTitle").value;
-    const title = document.querySelector("#postContent").value;
+    const content = document.querySelector("#postContent").value;
+    const title = document.querySelector("#postTitle").value;
     const response = await fetch('/api/posts', {
         method: 'POST',
         body: JSON.stringify({
             title: title,
-            content: content,
+            body: content,
         }),
         headers: {
             'Content-Type': 'application/json'

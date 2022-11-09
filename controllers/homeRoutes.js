@@ -5,13 +5,16 @@ router.get('/', async (req, res) => {
     const postData = await Post.findAll({
         include: [{
             model: User,
-            attributes: ['username']
+            attributes: ['name']
         }
         ]
-    }).catch((err) => {
-        res.json(err);
-    });
+    })
+    // .catch((err) => {
+    //     res.json(err);
+    // });
+    console.log(postData);
     const posts = postData.map((post) => post.get({ plain: true }));
+    console.log(posts);
     res.render('homepage', { posts, loggedIn: req.session.loggedIn });
 });
 
@@ -41,7 +44,7 @@ router.get('/post/:id', async (req, res) => {
                 attributes: [
                     'id',
                     'title',
-                    'content',
+                    'body',
                     'date_created'
                 ],
                 include: [

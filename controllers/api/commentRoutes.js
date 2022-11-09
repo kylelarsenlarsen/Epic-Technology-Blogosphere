@@ -1,69 +1,20 @@
 const router = require('express').Router();
-const { User } = require('../../models');
+const { Comment } = require('../../models');
+const withAuth = require('../../utils/auth');
 
-router.post('/', async (req, res) => {
+router.post('/', withAuth, async (req, res) => {
+ 
     try {
-        const userData = await User.create({
-            username: req.body.username,
-            email: req.body.email,
-            password: req.body.password,
-        });
-
-        req.session.save(() => {
-            req.session.loggedIn = true;
-            req.session.user_id = userData.id;
-            res.status(200).json(userData);
-        });
-
+      const post = await Comment.create({
+        body: req.body.body,
+        user_id: req.session.user_id,
+        post_id: req.body.post_id,
+        
+      });
+      res.status(200).json(post);
     } catch (err) {
-        res.status(400).json(err);
+      res.status(400).json(err);
     }
-});
-
-router.post('/login', async (req, res) => {
-    try {
-        const userData = await User.findOne({
-            where: {
-                email: req.body.email
-            },
-        });
-
-        if (!userData) {
-            res
-                .status(400)
-                .json({ message: 'Password or email is invalid.' });
-            return;
-        }
-
-        const validPassword = userData.checkPassword(req.body.password);
-
-        if (!validPassword) {
-            res
-                .status(400)
-                .json({ message: 'Password or email is invalid.' });
-            return;
-        }
-
-        req.session.save(() => {
-            req.session.loggedIn = true;
-            req.session.user_id = userData.id;
-            req.session.username = userData.username;
-            res.json({ user: userData, message: 'You are logged in!' });
-        });
-
-    } catch (err) {
-        res.status(400).json(err);
-    }
-});
-
-router.post('/logout', (req, res) => {
-    if (req.session.loggedIn) {
-        req.session.destroy(() => {
-            res.status(204).end();
-        });
-    } else {
-        res.status(404).end();
-    }
-});
+  });
 
 module.exports = router;

@@ -1,6 +1,6 @@
-async function deletionHandler(effect) {
-    effect.preventDefault();
-    const id = effect.target.dataset.id;
+async function deletionHandler(event) {
+    event.preventDefault();
+    const id = event.target.dataset.id;
     const response = await fetch(`/api/posts/${id}`, {
         method: "DELETE"
     });
