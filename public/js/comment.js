@@ -1,12 +1,11 @@
 const createComment = document.querySelector("#comment");
+const commentForm = document.querySelector("#commentForm");
 
 function showComment() {
-    
-    const commentForm = document.querySelector("#commentForm");
     commentForm.classList.remove("hide");
     createComment.classList.add("hide");
 };
-console.log(createComment);
+
 async function newComment(event) {
     event.preventDefault();
 

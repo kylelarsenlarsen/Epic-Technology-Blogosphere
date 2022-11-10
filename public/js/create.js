@@ -1,8 +1,7 @@
 const createPost = document.querySelector("#createPost");
+const postForm = document.querySelector("#postForm");
 
 function showPost() {
-    
-    const postForm = document.querySelector("#postForm");
     postForm.classList.remove("hide");
     createPost.classList.add("hide");
 };
