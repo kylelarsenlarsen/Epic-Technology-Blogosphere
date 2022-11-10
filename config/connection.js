@@ -17,5 +17,5 @@ if (process.env.JAWSDB_URL) {
     }
   );
 }
-
+// adding something to try committing.
 module.exports = sequelize;
